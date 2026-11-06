@@ -1,0 +1,14 @@
+<h2>Books</h2>
+@if (error) {
+  <div class="alert alert-danger">{{ error }}</div>
+}
+<ul class="list-group mb-3">
+  @for (book of books; track book.id) {
+    <a class="list-group-item list-group-item-action" [routerLink]="[book.id]" routerLinkActive="active">
+      {{ book.title }}
+    </a>
+  } @empty {
+    @if (!error) { <li class="list-group-item">No books yet. Add one from the Admin page.</li> }
+  }
+</ul>
+<router-outlet></router-outlet>

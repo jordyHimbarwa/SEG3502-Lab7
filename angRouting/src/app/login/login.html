@@ -1,0 +1,28 @@
+@if (message) {
+  <div class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+}
+
+@if (isLoggedIn) {
+  <div class="form-group">
+    <p>Logged in as <b>{{ loggedUser }}</b></p>
+    <button (click)="logout()" class="btn btn-danger">
+      Log out
+    </button>
+  </div>
+} @else {
+  <div class="container">
+    <div class="mb-2">
+      <label for="username" class="form-label">UserName :</label>
+      <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control">
+    </div>
+    <div class="mb-2">
+      <label for="password" class="form-label">Password :</label>
+      <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+    </div>
+    <button (click)="checkLogin()" class="btn btn-success">
+      Login
+    </button>
+  </div>
+}

@@ -1,0 +1,14 @@
+@if (selectedBook) {
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">{{ selectedBook.title }}</h4>
+      <p><b>Authors:</b> {{ selectedBook.authors | authornames }}</p>
+      <p><b>Category:</b> {{ selectedBook.category }}</p>
+      <p><b>Cost:</b> {{ selectedBook.cost }}</p>
+      <p><b>Year:</b> {{ selectedBook.year }}</p>
+      <p>{{ selectedBook.description }}</p>
+    </div>
+  </div>
+} @else if (selectedBook === null) {
+  <div class="alert alert-warning">Book not found.</div>
+}
